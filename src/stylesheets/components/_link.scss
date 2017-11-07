@@ -1,0 +1,35 @@
+/*
+  COMPONENT / Link
+*/
+.link {
+  @extend .link--primary;
+}
+
+/*
+  * Generate link classes using the ordered latin list
+*/
+@each $item in $order {
+  $colour-name: map-get($colours, $item);
+
+  .link--#{$item} {
+    &,
+    &:link,
+    &:active,
+    &:visited {
+      color: $colour-name;
+    }
+
+    &:focus {
+      color: lighten($colour-name, 10%);
+    }
+  }
+
+  // Generate button hover states on non-touch devices
+  @include hover-state {
+    .link--#{$item} {
+      &:hover {
+        color: lighten($colour-name, 10%);
+      }
+    }
+  }
+}
