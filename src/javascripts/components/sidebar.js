@@ -69,6 +69,13 @@ export default class Sidebar {
           height: 'auto',
         });
       }
+    } else {
+      if (!this.isSmallScreen) {
+        TweenMax.set(this.$el, {
+          width: '0',
+          height: 'auto',
+        });
+      }
     }
   }
 
@@ -116,12 +123,12 @@ export default class Sidebar {
 
       if (this.isSmallScreen) {
         TweenMax.to(this.$el, 0.45, {
-          height: '0',
+          height: 0,
           ease: Expo.easeOut,
         });
       } else {
         TweenMax.to(this.$el, 0.45, {
-          width: '0',
+          width: 0,
           ease: Expo.easeOut,
         });
       }
