@@ -1,0 +1,39 @@
+/* Layout */
+.l-page {
+  @extend %flex-container;
+  
+  align-items: stretch;
+  position: relative;
+  min-height: 90vh;
+}
+.l-main {
+  width: 70%;
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.l-sidebar {
+  width: 30%;
+  background: rgba(0, 0, 255, 0.05);
+}
+
+.l-main,
+.l-sidebar {
+  position: relative;
+  min-height: 100%;
+  text-align: center;
+  padding: 3rem;
+}
+
+.l-header {
+  position: relative;
+  background: $col-primary;
+  color: $col-septenary;
+}
+
+.l-footer {
+  background: $col-secondary;
+  padding: 3rem;
+  font-family: $semibold-font;
+  color: $col-septenary;
+  text-align: center;
+}

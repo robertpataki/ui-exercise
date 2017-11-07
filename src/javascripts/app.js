@@ -3,8 +3,6 @@
 // Vendor import
 const BREWSER = require('brewser/dist/brewser.min').br;
 
-import svg4everybody from 'SVG4EveryBody';
-
 // Module imports
 import MCP from 'mcp';
 
@@ -32,9 +30,6 @@ window._app.start = function() {
   if(BREWSER.browser.ie) {
     $('html').addClass('is-ie');
   }
-
-  // Add SVG 'use' support for old browsers and IE
-  svg4everybody();
 
   // Cache device mode on the app instance
   var deviceMode = _app.DEVICE_MODES.DESKTOP;

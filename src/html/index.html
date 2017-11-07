@@ -1,18 +1,24 @@
 {% extends 'layouts/application.html' %}
 
 {% block content %}
-  <div class="page page--index">
-    <div class="page-contents">
-      <article class="container">
-        <div class="row">
-          <div class="col   col-24 mx-auto">
-            <ul class="reset-list center">
-              <li>
-                <a class="button" href="styleguide">Styleguide</a>
-              </li>
-            </ul>
-          </div>      
-        </div>
-      </article>
-  </div> 
+  <header class="l-header">
+    <nav class="l-nav">
+      <ul class="main-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="l-page">
+    <main class="l-main">
+    Main
+    </main>
+    <aside class="l-sidebar">
+      Sidebar
+    </aside>
+  </div>
+  <footer class="l-footer">
+    Footer
+  </footer>
 {% endblock %}

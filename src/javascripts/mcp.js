@@ -2,17 +2,8 @@
 
 // Vendor imports
 const BREWSER = require('brewser/dist/brewser.min').br;
-import RPMenu from 'rp-menu';
 
 // Component imports
-import SocialSharingButtons from 'social-sharing-buttons';
-import VideoOverlay from 'video-overlay';
-import WindowScroller from 'window-scroller';
-import CookieMessage from 'cookie-message';
-import Carousel from 'carousel';
-// import SideNav from 'side-nav';
-// import SubNav from 'sub-nav';
-// import Form from 'form';
 
 // Module imports
 export default class MCP {
@@ -34,31 +25,7 @@ export default class MCP {
 ////////////////////////////////////
 /////// Private methods
 ////////////////
-  _init() {
-    // Cookie message
-    this.cookieMessage = new CookieMessage({ reset: true });
-
-    
-    // Window scroller
-    this.windowScroller = new WindowScroller();
-
-    
-    // Video overlay
-    this.videoOverlay = new VideoOverlay();
-
-
-    // Social sharing buttons
-    this.socialSharingButtons = new SocialSharingButtons();
-
-    
-    // Responsive menu (only an example, will be removed)
-    this.rpMenu = new RPMenu();
-
-    
-    // Image carousel
-    this.carousel = new Carousel();
-
-    
+  _init() {    
     $(window).on(MCP.Events.RESIZE, _.bind(this._handleResize, this));
     this._handleResize();
   }
@@ -74,11 +41,6 @@ export default class MCP {
 
     if(this._resizeTimeout) {
       clearTimeout(this._resizeTimeout);        
-    }
-
-    // Resize the video overlay
-    if (this.videoOverlay) {
-      this.videoOverlay.resize();
     }
 
     // Trigger delayed resize event
