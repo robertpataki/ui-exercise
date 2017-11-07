@@ -1,15 +1,15 @@
 {
-  "name": "gulp-starter",
+  "name": "ui-exercise",
   "version": "0.0.1",
   "description": "A full featured configurable gulp asset pipeline and static site builder",
   "engines": {
     "node": ">=0.12.0 ~5.9.0",
     "npm": ">=2.14.12 ~3.7.3"
   },
-  "homepage": "https://robertpataki.github.io/bp-gulp-starter",
+  "homepage": "https://robertpataki.github.io/ui-exercise",
   "repository": {
     "type": "git",
-    "url": "git@github.com:robertpataki/bp-gulp-starter.git"
+    "url": "git@github.com:robertpataki/ui-exercise.git"
   },
   "scripts": {
     "start": "gulp",
