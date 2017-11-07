@@ -4,6 +4,7 @@
 const BREWSER = require('brewser/dist/brewser.min').br;
 
 // Component imports
+import Sidebar from 'components/sidebar';
 
 // Module imports
 export default class MCP {
@@ -12,6 +13,15 @@ export default class MCP {
       console.error('[MCP] - `app` is required!');
       return;
     }
+
+    this.eventDispatcher = {
+      events: {
+        RESIZE: 'resize',
+        DELAYED_RESIZE: 'debouncedResize',
+        SIDEBAR_SHOWN: 'sidebarShown',
+        SIDEBAR_HIDDEN: 'sidebarHidden',
+      },
+    };
 
     this.app = app;
 
@@ -25,8 +35,10 @@ export default class MCP {
 ////////////////////////////////////
 /////// Private methods
 ////////////////
-  _init() {    
-    $(window).on(MCP.Events.RESIZE, _.bind(this._handleResize, this));
+  _init() { 
+    this.sidebar = new Sidebar(this.eventDispatcher);
+
+    $(window).on(this.eventDispatcher.events.RESIZE, _.bind(this._handleResize, this));
     this._handleResize();
   }
 
@@ -37,7 +49,8 @@ export default class MCP {
 ////////////////
 
   _handleResize(e) {
-    $(this.eventDispatcher).trigger(MCP.Events.RESIZE);
+    console.log('resize');
+    $(this.eventDispatcher).trigger(this.eventDispatcher.events.RESIZE);
 
     if(this._resizeTimeout) {
       clearTimeout(this._resizeTimeout);        
@@ -48,7 +61,7 @@ export default class MCP {
   }
 
   _handleDelayedResize(e) {
-    $(this.eventDispatcher).trigger(MCP.Events.DELAYED_RESIZE);
+    $(this.eventDispatcher).trigger(this.eventDispatcher.events.DELAYED_RESIZE);
   }
 }
 
@@ -59,11 +72,5 @@ export default class MCP {
 ////////////////////////////////////
 /////// Static class vars
 ////////////////
-
-// Events
-MCP.Events = {
-  RESIZE: 'resize',
-  DELAYED_RESIZE: 'debouncedResize',
-};
 
 MCP.RESIZE_DELAY = 500;
