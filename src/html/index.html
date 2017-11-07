@@ -1,8 +1,8 @@
 {% extends 'layouts/application.html' %}
 
 {% block content %}
-  <header class="l-header">
-    <nav class="l-nav">
+  <header class="l-header" role="banner">
+    <nav class="l-nav" role="navigation">
       <ul class="main-menu">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
@@ -11,14 +11,14 @@
     </nav>
   </header>
   <div class="l-page">
-    <main class="l-main">
+    <main class="l-main" role="main">
     Main
     </main>
-    <aside class="l-sidebar">
+    <aside class="l-sidebar" role="complementary">
       Sidebar
     </aside>
   </div>
-  <footer class="l-footer">
+  <footer class="l-footer" role="contentinfo">
     Footer
   </footer>
 {% endblock %}
