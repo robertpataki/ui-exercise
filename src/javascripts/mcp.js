@@ -49,7 +49,6 @@ export default class MCP {
 ////////////////
 
   _handleResize(e) {
-    console.log('resize');
     $(this.eventDispatcher).trigger(this.eventDispatcher.events.RESIZE);
 
     if(this._resizeTimeout) {

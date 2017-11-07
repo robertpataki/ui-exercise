@@ -22,21 +22,21 @@
 .l-main {
   width: 70%;
   padding: 1rem;
+  padding-bottom: 3rem;
 }
 
 .l-sidebar {
   width: 30%;
   background: lighten($col-quaternary, 10%);
   color: $col-septenary;
-  padding: 2rem;
   font-family: $semibold-font;
+  overflow: hidden;
 }
 
 .l-main,
 .l-sidebar {
   position: relative;
   min-height: 100%;
-  padding-bottom: 3rem;
   text-align: center;
 }
 
