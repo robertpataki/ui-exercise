@@ -5,23 +5,35 @@
   align-items: stretch;
   position: relative;
   min-height: 90vh;
+
+  @include media("<md") {
+    flex-direction: column;
+
+    .l-main,
+    .l-sidebar {
+      width: 100%;
+    }
+  }
 }
 .l-main {
   width: 70%;
-  background: rgba(0, 255, 0, 0.05);
+  padding: 1rem;
 }
 
 .l-sidebar {
   width: 30%;
-  background: rgba(0, 0, 255, 0.05);
+  background: lighten($col-quaternary, 10%);
+  color: $col-septenary;
+  padding: 2rem;
+  font-family: $semibold-font;
 }
 
 .l-main,
 .l-sidebar {
   position: relative;
   min-height: 100%;
+  padding-bottom: 3rem;
   text-align: center;
-  padding: 3rem;
 }
 
 .l-header {
@@ -31,9 +43,10 @@
 }
 
 .l-footer {
-  background: $col-secondary;
+  position: relative;
   padding: 3rem;
+  text-align: center;
   font-family: $semibold-font;
   color: $col-septenary;
-  text-align: center;
+  background: lighten($col-quaternary, 50%);
 }
